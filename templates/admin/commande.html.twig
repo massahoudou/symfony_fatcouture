@@ -1,0 +1,61 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Listing des Commandes</h1>
+        </div>
+        <div>
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Tous les données</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th>N°</th>
+                                <th>nom</th>
+                                <th>prenom</th>
+                                <th>telephone</th>
+                                <th>Boit postal</th>
+                                <th>Non du produit</th>
+                                <th>prix du produit</th>
+                                <th>Email</th>
+                                <th>Adresse</th>
+                                <th>suppr</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for commande in commandes %}
+                                <tr>
+                                    <th>{{ commande.id }}</th>
+                                    <th>{{commande.nom }}</th>
+                                    <th>{{ commande.prenom }}</th>
+                                    <th> {{commande.telephone }}</th>
+                                    <th>{{ commande.BP }}</th>
+                                    <th>{{ commande.idproduit.titre }}</th>
+                                    <th>{{ commande.idproduit.prix }}</th>
+                                    <th>{{ commande.email }}</th>
+                                    <th>{{ commande.adresse }}</th>
+                                    <th>
+                                        <form action="{{ path('commande.delete', {id: commande.id}) }}" onsubmit="return confirm('Etes vous vraiment sur de vouloir supprimé')">
+                                            <button class="btn"> <img height="18px" src="{{ asset('img/icons8_trash_26px.png') }}" alt=""></button>
+                                        </form>
+                                    </th>
+
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

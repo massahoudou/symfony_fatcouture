@@ -1,0 +1,51 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">listes des utilisateur</h1>
+            <a href="{{ path('app_register') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-plus"></i> <span>Ajouter</span> </a>
+        </div>
+        <div>
+            <h1></h1>
+
+            <div class="jumbotron">
+                <div class="container col-md table-responsive">
+                    {% for message in app.flashes('success') %}
+                        <div class="alert alert-success">
+                            {{ message  }}
+                        </div>
+                    {% endfor %}
+                    <table class="table table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <td>N°</td>
+                                <td class="text-primary">Admin</td>
+                                <td class="text-danger">Nom</td>
+                                <td class="text-warning">supp</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            {% for user in users %}
+                                <td> {{ user.id }}</td>
+                                <td><img src="{{ asset('img/icons8_male_user_26px.png') }}" alt=""></td>
+                            <td>{{ user.username }}</td>
+                                <td>
+                                    <form action="{{ path('app_register.delete',{id: user.id}) }}" onsubmit="return confirm('Etes vous vraiment sur de vouloir supprimé')">
+                                       <button class="btn"> <img src="{{ asset('img/icons8_trash_26px.png') }}" alt=""></button>
+                                    </form>
+                                </td>
+                            {% endfor %}
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

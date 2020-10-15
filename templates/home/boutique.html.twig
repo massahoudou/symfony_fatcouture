@@ -1,0 +1,17 @@
+{% for produit in produits %}
+    <div class="text-center">
+        <a href="{{ path('produit.show',{id: produit.id}) }}">
+            <img class="boutique_img" src="images/produits/{{ produit.filename }}" alt="">
+
+            <div class="text-warning">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i><i class="fa fa-star"></i>
+            </div>
+            <div>{{ produit.prix }} F CFA</div>
+        </a>
+
+        <a href="{{ path('produit.show',{id: produit.id}) }}" class="shop-car" ><i class="fa fa-shopping-cart"></i></a>
+    </div>
+{% endfor %}
+

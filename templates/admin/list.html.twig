@@ -1,0 +1,57 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Listiing des produits</h1>
+            <a href="{{ path('produit.new',{id: app.user.id}) }}" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"><i class="fa fa-plus"></i>
+                <span>Ajouter</span> </a>
+        </div>
+        <div>
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        {% for message in app.flashes('success') %}
+                            <div class="alert alert-success">
+                                {{ message  }}
+                            </div>
+                        {% endfor %}
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th>N°</th>
+                                <th>Titre</th>
+                                <th>Prix </th>
+                                <th>Mise en ligne </th>
+                                <th>editer</th>
+                                <th>Supp</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for produit in produits %}
+                                <tr>
+                                    <th>{{ produit.id }}</th>
+                                    <th>{{ produit.titre }}</th>
+                                    <th>{{ produit.prix }}</th>
+                                    <th>{{ produit.misajourAt | date() }}</th>
+                                    <th><a class="text-success" href="{{ path( 'produit.edit', {id: produit.id}) }}"><i class="fa fa-edit"></i></a>    </th>
+                                     <th><form action="{{ path('produit.delete', {id: produit.id}) }}" onsubmit="return confirm('Etes vous vraiment sur de vouloir supprimé')">
+                                             <button class="btn"> <img height="18px" src="{{ asset('img/icons8_trash_26px.png') }}" alt=""></button>
+                                         </form></th>
+
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

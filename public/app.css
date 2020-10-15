@@ -1,0 +1,431 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+
+}
+
+.sidebar {
+  width: 190px;
+  height: 100%;
+  background-color: rgba(17, 10, 8, 0.541);
+  position: fixed;
+  top: 0;
+  left: -300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 55px;
+  transition: left 0.8s cubic-bezier(1, 0, 0, 1);
+}
+
+.change {
+  left: 0;
+}
+
+.nav-list {
+  margin-top: -200px;
+}
+
+.sidebar li a {
+  color: #f5efff;
+  font-size: 20px;
+  font-weight: 100vh;
+}
+
+.sidebar li a:hover {
+  color: #ffffff;
+}
+
+.sidebar li {
+  margin-left: 0px;
+  list-style-type: none;
+  text-align: center;
+}
+
+.ligne {
+  width: 27px;
+  height: 26px;
+  position: fixed;
+  top: 33px;
+  left: 47px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.fat {
+  margin-left: 80px;
+  color: white;
+  margin-top: -18px;
+  font-size: 45px;
+  font-style: normal;
+  font-family: Gabriola;
+}
+
+.fat:hover {
+  color: white;
+}
+
+.nav_bg {
+  background: #e22677;
+  height: 70px;
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: #fafafa;
+  margin-top: -25px;
+  transition: all 0.8s;
+}
+
+.change .line-1 {
+  transform: rotateZ(-405deg)translate(-6px, 6px);
+}
+
+.change .line-2 {
+  opacity: 0;
+}
+
+.change .line-3 {
+  transform: rotateZ(405deg) translate(-6px, -6px);
+}
+
+.nav-list {
+  color: white;
+}
+
+.nav-item {
+  margin: 25px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: 300;
+  font-family: Gabriola ;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  padding: 0px 0;
+}
+
+.nav-link::before, .nav-link::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background:  #e22677;
+  position: absolute;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.5s
+}
+
+.nav-link::after {
+  bottom: 0;
+  transform-origin: right;
+}
+
+.nav-link::before {
+  top: 0;
+  transform-origin: left;
+}
+
+.nav-link:hover::before, .nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+
+rent-slide {
+  background: rgba(48, 48, 48, 0.55);
+}
+
+.section {
+  position: relative;
+  top: -140px;
+}
+
+.row img {
+  width: 50%s;
+}
+
+.image {
+  width: 25%;
+  float: left;
+  object-fit: cover;
+}
+
+.section p img {
+  width: 25px;
+}
+
+.propos {
+  display: inline-block;
+  box-shadow: 3px 5px 7px 1px rgba(0, 0, 0, 0.39);
+  width: 95%;
+  border-left: 7px solid  #e22677;
+  position: relative;
+}
+
+.left {
+  float: left;
+}
+
+.left p {
+  width: 60%;
+  margin-left: 30%;
+  margin-top: 40px;
+}
+
+.service {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 2%;
+  padding-right: 2%;
+  justify-content:center;
+}
+
+.partage img {
+  width: 45px;
+}
+
+.container p {
+  padding: 0 20px 0 20px;
+}
+
+.service .service_png {
+  width: 30px;
+}
+
+
+.column {
+  flex: 20%;
+  -ms-flex: 20%;
+  object-fit: cover;
+}
+
+.column img {
+  position: relative;
+  width: 45%;
+}
+.jumbo_bg
+{
+  background-image: url("/img/model-600238_1920.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+.header_bg
+{
+  background-image: url("/img/model-600238_1920.jpg");
+  background-attachment: fixed;
+  width: 100%;
+  height: 700px;
+  background-size: cover;
+  overflow: hidden;
+
+}
+.header_item
+{
+position: absolute;
+  top: 25%;
+}
+.header_text
+{
+  color: white;
+  padding-left: 10%;
+
+}
+.header_text .text1
+{
+  font-family:Gabriola;
+  font-weight: 400;
+  font-size: 5em;
+  padding-left: %;
+}
+.header_text .text2
+{
+  padding-left: 15%;
+}
+.header_btn_item
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.header_btn
+{
+  color: white;
+  padding: 10px 20px 10px 20px ;
+  box-shadow: 1px 2px 20px 0px rgba(95, 73, 95, 0.48);
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 30px;
+
+}
+.btn1
+{
+  background:white;
+  color: #e22677;
+  margin-left: 12%;
+}
+.btn2{
+  background:  #e22677;
+  margin-left: 7%;
+}
+ .btn1:hover
+{
+  padding: 15px 25px 15px 25px ;
+  text-decoration: none;
+  background:  #e22677;
+   color: white;
+ transition-duration: 0.8s;
+ transition-property: all;
+}
+.btn2:hover
+{
+  padding: 15px 25px 15px 25px ;
+  text-decoration: none;
+  background: #e34c4c;
+  color:white;
+  transition-duration: 0.8s;
+  transition-property: all;
+}
+.form_bg
+{
+
+}
+.form_form
+{
+  box-shadow: 1px 1px 25px 0 rgba(226, 38, 119, 0.41);
+}
+ .service_item
+{
+  border: 1px solid rgba(226, 38, 119, 0.53);
+   border-radius: 3px;
+
+   margin: 10px;
+   box-shadow: 1px 0px 30px 0 rgba(226, 38, 119, 0.4);
+}
+.service_item:hover
+{
+  background: #e22677;
+  transform: scale(1.4) rotate(0deg);
+  transition: all ease-in-out 1s ;
+  color: white;
+
+
+}
+.propos_item
+{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+.propos_item .propos_img
+{
+
+}
+.propos_text
+{
+
+  width: 50%;
+
+}
+.boutique_item
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.boutique_img
+{
+  height: 200px;
+  border-radius: 5px;
+  box-shadow: 0 1px 15px 0 rgba(22, 16, 31, 0.29);
+}
+.gallery_item
+{
+
+}
+.gallery_item img {
+
+  width: 100%;
+  padding: 0;
+  height: 250px;
+}
+.back
+{
+  background: #e22677;;
+  color: white;
+}
+.gallery_item img:hover
+{
+  transform: scale(1.3);
+  transition: all ease-out .5s;
+}
+
+.shop-car
+{
+  color: #e22677;
+}
+.text3
+{
+  color:  #e22677;
+  font-family: Gabriola;
+}
+.text4
+{
+  font-family: Gabriola;
+}
+.logo
+{
+  display: flex;
+  justify-content: space-evenly;
+  background: #f5f5f5;
+  border-radius:  25px   ;
+  width: 100%;
+  box-shadow: 0 0 15px 0 #bc3570;
+}
+.logo img
+{
+  width: 5%;
+}
+.logo2
+{
+  display: flex;
+  justify-content: space-evenly;
+
+}
+.logo2 img
+{
+  width: 5%;
+}
+.to-top
+{
+  display: none;
+  bottom: 50px;
+  right: 20px;
+  background-color: #e22677 ;
+  color: white;
+  padding: 12px 17px ;
+  border-radius: 50%;
+  position: fixed;
+}
+.to-top:hover
+{
+  background-color: #f1cedd;
+  color: #e22677;
+  text-decoration: none;
+  transition: all ease-in 1s;
+}
+
+

@@ -1,0 +1,22 @@
+
+    <div  class="card-body">
+        <ul>
+            <li class="text-center text3 h5">Procéder à la commende </li>
+        </ul>
+        {{ form_start(form) }}
+        <div class="row ">
+            <div class="col-md">{{ form_row(form.nom) }}</div>
+            <div class="col-md">{{ form_row(form.prenom) }}</div>
+        </div>
+        <div class="row">
+            <div class="col-md">{{ form_row(form.telephone) }}</div>
+            <div class="col-md">{{ form_row(form.email) }}</div>
+        </div>
+        <div class="row">
+            <div class="col-md">{{ form_row(form.adresse) }}</div>
+            <div class="col-md">{{ form_row(form.BP) }}</div>
+        </div>
+        <button  role="button" type="submit"  class="btn back">Envoyer </button>
+    </div>
+     {{ form_end(form) }}
+</form>

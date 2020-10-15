@@ -1,0 +1,12 @@
+{{ form_start(form) }}
+{{ form_row(form.titre ,  {'attr' : {'placeholder' : 'Entrer le titre du produit..'}}) }}
+{{ form_row(form.prix ,{'attr' : {'placeholder' : 'Entrer le prix du produit...'}}) }}
+{{ form_row(form.description ,{'attr' :{'placeholder' : 'Description du produit...'}}) }}
+{{ form_rest(form) }}
+
+<button type="submit" class="btn btn-{{color|default ('danger') }} mt-5 col-md-3">
+    <i class="fa fa-save"></i>
+    <span>
+        {{ button|default('Enregistrer') }}
+    </span></button>
+{{ form_end(form ) }}

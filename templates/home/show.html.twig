@@ -1,0 +1,66 @@
+{% extends 'base2.html.twig'%}
+
+{% block body %}
+
+    <div class="jumbotron-fluid jumbo_bg">
+        <div class="row  mx-5  ">
+            <div class="row">
+                <img class="" height="500px" src="images/produits/{{produit1.filename}}" alt="">
+                <div>
+                    <img height="300px"  src="images/produits/{{ produit1.filename}}" alt="">
+                    <table class="table table-bordered table-striped">
+                        <h2 class=" back h4 text4  text-center">
+                            Description sur produit
+                        </h2>
+
+
+                        <tbody class=" text4">
+                        <tr class="">
+                            <td class="text3 h4">Intituler</td>
+                            <td class="h4">{{ produit1.titre }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text3 h4">Prix </td>
+                            <td class="h4">{{ produit1.Prix }} F CFA</td>
+                        </tr>
+                        <tr>
+                            <td class="text3 h4">description</td>
+                            <td class="h4">{{ produit1.description }}</td>
+                        </tr>
+
+                        </tbody>
+
+
+                    </table>
+                </div>
+
+
+            </div>
+            <div class="col-md-1"></div>
+            <div class="">
+
+                <div  class="card my-5 mx-5">
+                    <h2 class="alert back h4 text4 text-center">
+                        Commande <i class="fa fa-envelope"></i>
+                    </h2>
+                  {{ include('home/_form.html.twig') }}
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <section>
+    <h5 id="boutique" class=" text-center h2  ">Boutique</h5>
+    <div class="container-fluid mt-5">
+        <div class="my-5 boutique_item">
+            {{ include('home/boutique.html.twig') }}
+
+        </div>
+
+    </div>
+
+    </section>
+
+
+{% endblock %}
